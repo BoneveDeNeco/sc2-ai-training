@@ -13,8 +13,11 @@ env = DZBEnv()
 #env = DummyVecEnv([lambda: DZBEnv()])
 
 # use ppo to learn and save the model when finished
-model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="log/")
+model = PPO("MlpPolicy", env, verbose=1)
 if os.path.exists("model/dbz_ppo"):
+    print("Picking up from existing model")
     model.load("model/dbz_ppo")
+else:
+    print("Starting new model")
 model.learn(total_timesteps=int(1e5), tb_log_name="first_run", reset_num_timesteps=False)
 model.save("model/dbz_ppo")

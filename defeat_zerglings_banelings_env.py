@@ -57,7 +57,7 @@ class DZBEnv(gym.Env):
         # 4: Enemy index
         self.action_space = spaces.Box(
             low=np.array([0, 0, -15, -15, 0]),
-            high=np.array([2, 8, 15, 15, 8]),
+            high=np.array([2, 9, 15, 15, 10]),
             dtype=np.int8
         )
         # [0: x, 1: y, 2: hp]
