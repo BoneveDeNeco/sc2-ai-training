@@ -39,7 +39,7 @@ class DZBEnv(gym.Env):
             action_space=actions.ActionSpace.RAW,
             use_raw_units=True,
             raw_resolution=64),
-        'realtime': True
+        'realtime': False
     }
 
     def __init__(self, **kwargs):
