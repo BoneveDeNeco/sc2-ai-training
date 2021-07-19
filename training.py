@@ -14,7 +14,7 @@ env = DZBEnv()
 
 # use ppo to learn and save the model when finished
 model = PPO("MlpPolicy", env, verbose=1)
-if os.path.exists("model/dbz_ppo"):
+if os.path.exists("./model/dbz_ppo.zip"):
     print("Picking up from existing model")
     model.load("model/dbz_ppo")
 else:
